@@ -259,18 +259,6 @@
         "installedAt": "2026-10-29T09:42:55.128Z"
       },
       {
-        "id": "footer-center-icon-box",
-        "label": "Soft gray box around footer center icons",
-        "bundlePath": "./runtime/behaviors/footer-center-icon-box-489279bbcd85f6d1.js",
-        "sourceSha256": "489279bbcd85f6d1da97a1d31913b266200601c7727a29a7f22f3f4186e1577c",
-        "modulePaths": [],
-        "config": {},
-        "mounts": [],
-        "ownedLayerIds": [],
-        "interactions": [],
-        "installedAt": "2026-10-29T09:45:39.077Z"
-      },
-      {
         "id": "footer-sketch-measure",
         "label": "Sketch color and standard measurement tools",
         "bundlePath": "./runtime/behaviors/footer-sketch-measure-37a7278b9626b8c4.js",
@@ -336,6 +324,40 @@
         "ownedLayerIds": [],
         "interactions": [],
         "installedAt": "2026-10-29T11:31:59.377Z"
+      },
+      {
+        "id": "footer-center-icon-box",
+        "label": "Vertically center sketch and measure buttons in soft gray footer box",
+        "bundlePath": "./runtime/behaviors/footer-center-icon-box-11b5f76613fe47ed.js",
+        "sourceSha256": "11b5f76613fe47ed7429d619e31335d93fc6b492df2cc1bdb0b465a90043f8a5",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T11:44:41.870Z"
+      },
+      {
+        "id": "footer-sketch-text",
+        "label": "Tekstschetsen in het gecentreerde kaartgereedschap",
+        "bundlePath": "./runtime/behaviors/footer-sketch-text-9b3d9d4558766e08.js",
+        "sourceSha256": "9b3d9d4558766e0857b56e793dcda067ff44565ed372f8cb802f3d1effb3707b",
+        "modulePaths": [
+          "esri/Graphic"
+        ],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [
+          {
+            "id": "place-sketch-text-click",
+            "trigger": {
+              "type": "map-click"
+            },
+            "actionId": "place-sketch-text"
+          }
+        ],
+        "installedAt": "2026-10-29T11:51:26.310Z"
       }
     ]
   },
