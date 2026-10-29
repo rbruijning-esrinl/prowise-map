@@ -180,18 +180,6 @@
         "installedAt": "2026-10-29T08:44:35.456Z"
       },
       {
-        "id": "search-always-open",
-        "label": "Keep search open and hide expand icon",
-        "bundlePath": "./runtime/behaviors/search-always-open-66916b053bc2752c.js",
-        "sourceSha256": "66916b053bc2752ce1bac7546afe2a5dc5c36a96a4ed91b49de5515a6fe888b2",
-        "modulePaths": [],
-        "config": {},
-        "mounts": [],
-        "ownedLayerIds": [],
-        "interactions": [],
-        "installedAt": "2026-10-29T08:47:29.987Z"
-      },
-      {
         "id": "rounder-ui-corners",
         "label": "More rounded panels and controls",
         "bundlePath": "./runtime/behaviors/rounder-ui-corners-a5635034decc0fea.js",
@@ -324,6 +312,18 @@
         "ownedLayerIds": [],
         "interactions": [],
         "installedAt": "2026-10-29T10:59:04.281Z"
+      },
+      {
+        "id": "search-always-open",
+        "label": "Keep search stationary and open when Escape dismisses suggestions",
+        "bundlePath": "./runtime/behaviors/search-always-open-04db11cda968f6cd.js",
+        "sourceSha256": "04db11cda968f6cd65cecd5c6b47cbb82c92edfe4ad3ef767607da0c6afca0af",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T11:08:34.680Z"
       }
     ]
   },
