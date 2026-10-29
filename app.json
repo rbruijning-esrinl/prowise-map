@@ -283,26 +283,6 @@
         "installedAt": "2026-10-29T09:18:38.807Z"
       },
       {
-        "id": "footer-sketch-measure",
-        "label": "Icon-only sketch and measure tools with separate color pickers",
-        "bundlePath": "./runtime/behaviors/footer-sketch-measure-b3d30fb6f09f1fb9.js",
-        "sourceSha256": "b3d30fb6f09f1fb9ae2a7750bd38433779285273728e63c20158135e36ffb9a2",
-        "modulePaths": [
-          "esri/Graphic",
-          "esri/layers/GraphicsLayer",
-          "esri/widgets/AreaMeasurement2D/AreaMeasurement2DViewModel",
-          "esri/widgets/DistanceMeasurement2D/DistanceMeasurement2DViewModel",
-          "esri/widgets/Sketch/SketchViewModel"
-        ],
-        "config": {},
-        "mounts": [
-          "map-bottom-space"
-        ],
-        "ownedLayerIds": [],
-        "interactions": [],
-        "installedAt": "2026-10-29T09:40:03.454Z"
-      },
-      {
         "id": "drawing-tools-typography",
         "label": "Match sketch and measure typography to Thema's panel",
         "bundlePath": "./runtime/behaviors/drawing-tools-typography-c0be43e13d04c99b.js",
@@ -325,6 +305,25 @@
         "ownedLayerIds": [],
         "interactions": [],
         "installedAt": "2026-10-29T09:45:39.077Z"
+      },
+      {
+        "id": "footer-sketch-measure",
+        "label": "Sketch color and standard measurement tools",
+        "bundlePath": "./runtime/behaviors/footer-sketch-measure-37a7278b9626b8c4.js",
+        "sourceSha256": "37a7278b9626b8c4adcfd6bdf4fd885bc54c31eb785f8d8de2dfc0b9f0d751e7",
+        "modulePaths": [
+          "esri/layers/GraphicsLayer",
+          "esri/widgets/AreaMeasurement2D/AreaMeasurement2DViewModel",
+          "esri/widgets/DistanceMeasurement2D/DistanceMeasurement2DViewModel",
+          "esri/widgets/Sketch/SketchViewModel"
+        ],
+        "config": {},
+        "mounts": [
+          "map-bottom-space"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T10:32:42.391Z"
       }
     ]
   },
