@@ -104,18 +104,6 @@
         "installedAt": "2026-10-29T08:07:54.521Z"
       },
       {
-        "id": "search-bar-style",
-        "label": "Search aligned with Thema header",
-        "bundlePath": "./runtime/behaviors/search-bar-style-3da605b26b75af19.js",
-        "sourceSha256": "3da605b26b75af19133537efb2fa554a417905bbd363641b6df520733d457ae8",
-        "modulePaths": [],
-        "config": {},
-        "mounts": [],
-        "ownedLayerIds": [],
-        "interactions": [],
-        "installedAt": "2026-10-29T08:30:43.919Z"
-      },
-      {
         "id": "remove-empty-search-popover",
         "label": "Remove both empty search wrapper backgrounds",
         "bundlePath": "./runtime/behaviors/remove-empty-search-popover-6a54c0272d054670.js",
@@ -138,18 +126,6 @@
         "ownedLayerIds": [],
         "interactions": [],
         "installedAt": "2026-10-29T08:38:35.541Z"
-      },
-      {
-        "id": "search-clean-controls",
-        "label": "Hide search provider selector and grey input borders",
-        "bundlePath": "./runtime/behaviors/search-clean-controls-12cf3b40cf3a3829.js",
-        "sourceSha256": "12cf3b40cf3a3829aa042aa3b8609101cf1f144263aff98e47e198375081241e",
-        "modulePaths": [],
-        "config": {},
-        "mounts": [],
-        "ownedLayerIds": [],
-        "interactions": [],
-        "installedAt": "2026-10-29T08:39:46.586Z"
       },
       {
         "id": "search-icon-placeholder",
@@ -324,6 +300,30 @@
         "ownedLayerIds": [],
         "interactions": [],
         "installedAt": "2026-10-29T10:32:42.391Z"
+      },
+      {
+        "id": "search-bar-style",
+        "label": "Search aligned with Thema header; wait for input startup",
+        "bundlePath": "./runtime/behaviors/search-bar-style-f7e2eddc1fb848e6.js",
+        "sourceSha256": "f7e2eddc1fb848e68178c75d88897cf29c3499c25de4104f5b87e739c614a809",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T10:49:38.778Z"
+      },
+      {
+        "id": "search-clean-controls",
+        "label": "Hide provider and grey input borders after startup and rerender",
+        "bundlePath": "./runtime/behaviors/search-clean-controls-f4d82e17075e7ae0.js",
+        "sourceSha256": "f4d82e17075e7ae037ea03dcacc87ec10a02796ad8e138752c932c22f89082a2",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T10:59:04.281Z"
       }
     ]
   },

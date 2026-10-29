@@ -1,9 +1,12 @@
-export default function install(app) {
-  const host=document.getElementById('app-widget-host-place-search');
-  const search=document.getElementById('app-widget-place-search');
-  app.assert(host&&search,'Search widget missing');
-  const panel=document.querySelector('section[aria-label="Thema\'s"]');
-  app.assert(panel?.firstElementChild,'Thema header missing');
+export default async function install(app) {
+  let disposed=false, timer=0, releaseWait=null;
+  app.onCleanup(()=>{disposed=true;if(timer)clearTimeout(timer);releaseWait?.();});
+  const resolve=()=>{const host=document.getElementById('app-widget-host-place-search'),search=document.getElementById('app-widget-place-search'),panel=document.querySelector('section[aria-label="Thema\'s"]'),root=search?.shadowRoot,auto=root?.querySelector('calcite-autocomplete'),field=auto?.shadowRoot?.querySelector('calcite-input'),input=field?.shadowRoot?.querySelector('input');return {host,search,panel,root,auto,field,input};};
+  const started=performance.now();let ready=resolve();
+  while(!disposed&&!(ready.host?.shadowRoot&&ready.panel?.firstElementChild&&ready.input)&&performance.now()-started<15000){await new Promise(resolveWait=>{releaseWait=resolveWait;timer=setTimeout(()=>{timer=0;releaseWait=null;resolveWait();},50);});ready=resolve();}
+  app.assert(!disposed,'Search style installation cancelled');
+  app.assert(ready.host?.shadowRoot&&ready.panel?.firstElementChild&&ready.input,'Search input did not finish rendering within 15 seconds');
+  const {host,search,panel}=ready;
   const header=panel.firstElementChild;
   const viewElement=app.view.container;
   const style=document.createElement('style');
@@ -14,7 +17,7 @@ export default function install(app) {
     for(const [sr,extra] of [[root,':host > div:first-child {border-radius:20px!important;background:#fff!important;height:var(--thema-header-height,auto)!important;box-sizing:border-box!important}'],[auto?.shadowRoot,''],[field?.shadowRoot,'']]){if(!sr||inserted.some(x=>x.parentNode===sr))continue;const s=document.createElement('style');s.textContent=':host {font-family:Poppins,sans-serif!important;font-size:18px!important;font-weight:500!important} input, input::placeholder, .input, [part="input"]{font-family:Poppins,sans-serif!important;font-size:18px!important;font-weight:500!important}'+extra;sr.append(s);inserted.push(s)}
     return {auto:!!auto,field:!!field,fieldShadow:!!field?.shadowRoot,input:!!field?.shadowRoot?.querySelector('input')};};
   let frame=0;
-  function align(){frame=0;if(!host.isConnected||!header.isConnected)return;
+  function align(){frame=0;if(disposed||!host.isConnected||!header.isConnected)return;
     const v=viewElement.getBoundingClientRect(),p=panel.getBoundingClientRect(),h=header.getBoundingClientRect();
     if(!v.width||!h.height)return;
     const margin=p.left-v.left;
@@ -27,13 +30,14 @@ export default function install(app) {
     search.style.transform=`translate(${v.right-margin-width-actual.left}px, ${h.top-actual.top}px)`;
     apply();
   }
-  const schedule=()=>{if(!frame)frame=requestAnimationFrame(align)};
+  const schedule=()=>{if(!disposed&&!frame)frame=requestAnimationFrame(align)};
   const observer=new ResizeObserver(schedule);
   observer.observe(header);observer.observe(panel);observer.observe(viewElement);
   window.addEventListener('resize',schedule);
   const describe=el=>{if(!el)return null;const c=getComputedStyle(el),r=el.getBoundingClientRect();return {tag:el.localName,size:c.fontSize,font:c.fontFamily,weight:c.fontWeight,left:r.left,top:r.top,right:r.right,width:r.width,height:r.height,radius:c.borderRadius,background:c.backgroundColor}};
-  const inspect=()=>{align();const found=apply(),auto=search.shadowRoot?.querySelector('calcite-autocomplete'),field=auto?.shadowRoot?.querySelector('calcite-input'),input=field?.shadowRoot?.querySelector('input'),bar=search.shadowRoot?.firstElementChild,v=viewElement.getBoundingClientRect(),p=panel.getBoundingClientRect(),h=header.getBoundingClientRect(),s=search.getBoundingClientRect(),b=bar?.getBoundingClientRect();return {found,header:describe(header),panel:describe(panel),host:describe(host),search:describe(search),bar:describe(bar),auto:describe(auto),field:describe(field),input:describe(input),searchTopDifference:s.top-h.top,searchHeightDifference:s.height-h.height,barTopDifference:b?.top-h.top,barHeightDifference:b?.height-h.height,leftMargin:p.left-v.left,rightMargin:v.right-s.right,barRightMargin:b&&v.right-b.right,injected:inserted.length};};
+  const inspect=()=>{const auto=search.shadowRoot?.querySelector('calcite-autocomplete'),field=auto?.shadowRoot?.querySelector('calcite-input'),input=field?.shadowRoot?.querySelector('input'),bar=search.shadowRoot?.querySelector('div'),v=viewElement.getBoundingClientRect(),p=panel.getBoundingClientRect(),h=header.getBoundingClientRect(),s=search.getBoundingClientRect(),b=bar?.getBoundingClientRect();return {found:{auto:!!auto,field:!!field,fieldShadow:!!field?.shadowRoot,input:!!input},header:describe(header),panel:describe(panel),host:describe(host),search:describe(search),bar:describe(bar),auto:describe(auto),field:describe(field),input:describe(input),searchTopDifference:s.top-h.top,searchHeightDifference:s.height-h.height,barTopDifference:b?.top-h.top,barHeightDifference:b?.height-h.height,leftMargin:p.left-v.left,rightMargin:v.right-s.right,barRightMargin:b&&v.right-b.right,injected:inserted.filter(x=>x.isConnected).length};};
   app.actions.register('inspect-search-bar',inspect);
   app.onCleanup(()=>{if(frame)cancelAnimationFrame(frame);observer.disconnect();window.removeEventListener('resize',schedule);style.remove();inserted.forEach(x=>x.remove());for(const el of [host,search]){el.style.transform='';el.style.removeProperty('--thema-search-width');el.style.removeProperty('--thema-header-height')}});
+  align();apply();
   return inspect();
 }

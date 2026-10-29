@@ -1,0 +1,12 @@
+export default async function install(app){
+  const styles=new Map();let disposed=false,timer=null,wake=null,recheck=null;
+  app.onCleanup(()=>{disposed=true;clearTimeout(timer);clearInterval(recheck);wake?.();for(const s of styles.values())s.remove();styles.clear();});
+  function nodes(){const search=document.getElementById('app-widget-place-search');const root=search?.shadowRoot;const autocomplete=root?.querySelector('calcite-autocomplete');const input=autocomplete?.shadowRoot?.querySelector('calcite-input');return {search,root,input,field:input?.shadowRoot?.querySelector('input'),icon:input?.shadowRoot?.querySelector('.element-wrapper > .icon')};}
+  const deadline=Date.now()+15000;
+  while(!disposed){const n=nodes();if(n.root&&n.field&&n.icon)break;app.assert(Date.now()<deadline,'Search input did not finish rendering within 15 seconds');await new Promise(resolve=>{wake=resolve;timer=setTimeout(resolve,50);});wake=null;}
+  app.assert(!disposed,'Search border installation cancelled');
+  function add(root,css){if(!root)return;let s=styles.get(root);if(!s){s=document.createElement('style');s.dataset.prowiseSearchClean='true';s.textContent=css;styles.set(root,s);}if(s.parentNode!==root)root.append(s);}
+  function apply(){if(disposed)return;for(const [root,s] of styles){if(!root.host.isConnected){s.remove();styles.delete(root);}}const n=nodes();add(n.root,'calcite-dropdown.dropdown {display:none!important;}');add(n.input?.shadowRoot,'.element-wrapper > .icon, .element-wrapper > input {border-color:transparent!important;}');}
+  function inspect(){const n=nodes();const provider=n.root?.querySelector('calcite-dropdown.dropdown');const edges=e=>{if(!e)return null;const s=getComputedStyle(e);return [s.borderTopColor,s.borderRightColor,s.borderBottomColor,s.borderLeftColor];};return {ready:!!(n.field&&n.icon),providerDisplay:provider?getComputedStyle(provider).display:null,inputBorderColors:edges(n.field),iconBorderColors:edges(n.icon),searchShadow:n.search?getComputedStyle(n.search).boxShadow:null,searchBorderRadius:n.search?getComputedStyle(n.search).borderRadius:null,inputDisabled:n.field?.disabled??null,connectedStyles:[...styles.values()].filter(s=>s.isConnected).length};}
+  apply();recheck=setInterval(apply,1000);app.actions.register('inspect-search-borders',inspect);return inspect();
+}
