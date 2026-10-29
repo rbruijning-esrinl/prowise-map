@@ -1,0 +1,355 @@
+{
+  "version": "0.3",
+  "kind": "app",
+  "generatedAt": "2026-10-29T07:46:05.189Z",
+  "item": {
+    "title": "ProWise Map"
+  },
+  "map": {
+    "type": "webmap",
+    "path": "./map.json"
+  },
+  "app": {
+    "template": "nova-app",
+    "preset": "map",
+    "showHeader": false,
+    "theme": {
+      "mode": "light",
+      "accent": "default"
+    },
+    "layout": {
+      "header": {
+        "hidden": false,
+        "height": "0px",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "customMount",
+            "id": "floating-contents"
+          }
+        ]
+      },
+      "footer": {
+        "hidden": false,
+        "height": "64px",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "customMount",
+            "id": "map-bottom-space"
+          }
+        ]
+      }
+    },
+    "widgets": [
+      {
+        "id": "default-home",
+        "type": "home",
+        "slot": "top-left",
+        "config": {}
+      },
+      {
+        "id": "default-scale-bar",
+        "type": "scaleBar",
+        "slot": "bottom-left",
+        "config": {}
+      },
+      {
+        "id": "place-search",
+        "type": "search",
+        "slot": "top-right",
+        "title": "Zoeken",
+        "config": {}
+      }
+    ],
+    "interactions": [],
+    "behaviors": [
+      {
+        "id": "poppins-font",
+        "label": "Load Poppins Medium font",
+        "bundlePath": "./runtime/behaviors/poppins-font-70950232950678df.js",
+        "sourceSha256": "70950232950678dfb675c740bc49f730d77b20634ecdbe8d6338f6212244cdf0",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:03:46.501Z"
+      },
+      {
+        "id": "contents-tree",
+        "label": "Rounded floating Thema's panel",
+        "bundlePath": "./runtime/behaviors/contents-tree-485faf49b62fcda3.js",
+        "sourceSha256": "485faf49b62fcda348a23eee3d6116aac4e71badda5c920fe06ae93f9d853e50",
+        "modulePaths": [
+          "esri/core/reactiveUtils",
+          "esri/widgets/LayerList/LayerListViewModel"
+        ],
+        "config": {
+          "themeIcons": {
+            "1a0f226ea57-layer-149": "water-drop",
+            "1a0f2294397-layer-207": "pin",
+            "1a0f2040e7e-layer-2": "urban-model",
+            "1a0f20c2eaa-layer-34": "graph-bar",
+            "1a0f213b764-layer-82": "tree",
+            "1a0f231ce3b-layer-208": "car",
+            "1a0f22079ea-layer-112": "measure"
+          }
+        },
+        "mounts": [
+          "floating-contents"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:07:54.521Z"
+      },
+      {
+        "id": "search-bar-style",
+        "label": "Search aligned with Thema header",
+        "bundlePath": "./runtime/behaviors/search-bar-style-3da605b26b75af19.js",
+        "sourceSha256": "3da605b26b75af19133537efb2fa554a417905bbd363641b6df520733d457ae8",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:30:43.919Z"
+      },
+      {
+        "id": "remove-empty-search-popover",
+        "label": "Remove both empty search wrapper backgrounds",
+        "bundlePath": "./runtime/behaviors/remove-empty-search-popover-6a54c0272d054670.js",
+        "sourceSha256": "6a54c0272d054670c4b21e464faf9f778acfa9ce360462dfe039f9b7edb3813b",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:36:32.173Z"
+      },
+      {
+        "id": "search-matching-shadow",
+        "label": "Match search bar shadow to Thema panel",
+        "bundlePath": "./runtime/behaviors/search-matching-shadow-7e21527c3b3a57ae.js",
+        "sourceSha256": "7e21527c3b3a57ae0043d259ca2c772c1734787fb1d31357b43131db77aa638f",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:38:35.541Z"
+      },
+      {
+        "id": "search-clean-controls",
+        "label": "Hide search provider selector and grey input borders",
+        "bundlePath": "./runtime/behaviors/search-clean-controls-12cf3b40cf3a3829.js",
+        "sourceSha256": "12cf3b40cf3a3829aa042aa3b8609101cf1f144263aff98e47e198375081241e",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:39:46.586Z"
+      },
+      {
+        "id": "search-icon-placeholder",
+        "label": "Larger search icon and Dutch placeholder",
+        "bundlePath": "./runtime/behaviors/search-icon-placeholder-fa60a1993d1cafdf.js",
+        "sourceSha256": "fa60a1993d1cafdfbc69b976f4a5343bc5641c8a6654e35e7ae6b883cc4eed72",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:40:43.902Z"
+      },
+      {
+        "id": "popup-thema-style",
+        "label": "Match map popup to Thema widget",
+        "bundlePath": "./runtime/behaviors/popup-thema-style-1f60abb1e6c6f130.js",
+        "sourceSha256": "1f60abb1e6c6f130056448187f56c4ad27fd7356a08861eeea3070dd45454d37",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:42:26.280Z"
+      },
+      {
+        "id": "popup-hide-dock-button",
+        "label": "Hide popup dock button",
+        "bundlePath": "./runtime/behaviors/popup-hide-dock-button-dd9d55610c9f6f17.js",
+        "sourceSha256": "dd9d55610c9f6f1724e402570a9a16d47edacd812ed3cb8a264c4f36813867a2",
+        "modulePaths": [
+          "esri/core/reactiveUtils"
+        ],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:43:59.381Z"
+      },
+      {
+        "id": "popup-width",
+        "label": "Wider responsive popups",
+        "bundlePath": "./runtime/behaviors/popup-width-d3113e4064f9b181.js",
+        "sourceSha256": "d3113e4064f9b1816a66e9cef2316ce330ecaf9ea5aecb96e71d7c0cf5db2d52",
+        "modulePaths": [],
+        "config": {
+          "width": 600
+        },
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:44:35.456Z"
+      },
+      {
+        "id": "search-always-open",
+        "label": "Keep search open and hide expand icon",
+        "bundlePath": "./runtime/behaviors/search-always-open-66916b053bc2752c.js",
+        "sourceSha256": "66916b053bc2752ce1bac7546afe2a5dc5c36a96a4ed91b49de5515a6fe888b2",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:47:29.987Z"
+      },
+      {
+        "id": "rounder-ui-corners",
+        "label": "More rounded panels and controls",
+        "bundlePath": "./runtime/behaviors/rounder-ui-corners-a5635034decc0fea.js",
+        "sourceSha256": "a5635034decc0feabfb0e28159c5e421712b450407c58d33e4656d15a0498a38",
+        "modulePaths": [],
+        "config": {
+          "radius": 32,
+          "controlRadius": 12
+        },
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:48:51.607Z"
+      },
+      {
+        "id": "popup-centered-title",
+        "label": "Center pop-up header text",
+        "bundlePath": "./runtime/behaviors/popup-centered-title-275158fea7e901eb.js",
+        "sourceSha256": "275158fea7e901eb68e212f677224eda0deff5403bd85023380bdd9ffe9a0efa",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:51:26.086Z"
+      },
+      {
+        "id": "popup-close-icon-style",
+        "label": "Larger white pop-up close icon",
+        "bundlePath": "./runtime/behaviors/popup-close-icon-style-501b31c4b76b9f5d.js",
+        "sourceSha256": "501b31c4b76b9f5dde19c01a074ab06f0ad5c3285ba8ef2071bd697d6e2073f2",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:52:49.031Z"
+      },
+      {
+        "id": "edge-to-edge-map-layout",
+        "label": "Headerless edge-to-edge map and square footer",
+        "bundlePath": "./runtime/behaviors/edge-to-edge-map-layout-8fc8a7523ee6d749.js",
+        "sourceSha256": "8fc8a7523ee6d7498b21f0b8fd7c38a29ff1b45b7abcc0a8a05e7bed3c1917d0",
+        "modulePaths": [],
+        "config": {
+          "popupHeight": 640
+        },
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T08:58:42.641Z"
+      },
+      {
+        "id": "map-bottom-space-style",
+        "label": "Footer navigation with fullscreen toggle",
+        "bundlePath": "./runtime/behaviors/map-bottom-space-style-a4cd5a122b80b179.js",
+        "sourceSha256": "a4cd5a122b80b17962a49f92335a8dd2d3b0735855af444fe242259f4e804a19",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [
+          "map-bottom-space"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T09:18:38.807Z"
+      },
+      {
+        "id": "footer-sketch-measure",
+        "label": "Icon-only sketch and measure tools with separate color pickers",
+        "bundlePath": "./runtime/behaviors/footer-sketch-measure-b3d30fb6f09f1fb9.js",
+        "sourceSha256": "b3d30fb6f09f1fb9ae2a7750bd38433779285273728e63c20158135e36ffb9a2",
+        "modulePaths": [
+          "esri/Graphic",
+          "esri/layers/GraphicsLayer",
+          "esri/widgets/AreaMeasurement2D/AreaMeasurement2DViewModel",
+          "esri/widgets/DistanceMeasurement2D/DistanceMeasurement2DViewModel",
+          "esri/widgets/Sketch/SketchViewModel"
+        ],
+        "config": {},
+        "mounts": [
+          "map-bottom-space"
+        ],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T09:40:03.454Z"
+      },
+      {
+        "id": "drawing-tools-typography",
+        "label": "Match sketch and measure typography to Thema's panel",
+        "bundlePath": "./runtime/behaviors/drawing-tools-typography-c0be43e13d04c99b.js",
+        "sourceSha256": "c0be43e13d04c99be4e1e69308e48acc931ba275f6817f91089d55facfc693cd",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T09:42:55.128Z"
+      },
+      {
+        "id": "footer-center-icon-box",
+        "label": "Soft gray box around footer center icons",
+        "bundlePath": "./runtime/behaviors/footer-center-icon-box-489279bbcd85f6d1.js",
+        "sourceSha256": "489279bbcd85f6d1da97a1d31913b266200601c7727a29a7f22f3f4186e1577c",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T09:45:39.077Z"
+      }
+    ]
+  },
+  "nova": {
+    "basename": "f9d0cdb1-b5a4-413e-a08e-57e5fd9fcbf3",
+    "presentationMode": "app",
+    "ownedGraphicsLayerIds": [],
+    "origin": {
+      "portalUrl": "https://www.arcgis.com",
+      "mapId": "output-4a00057b-3eb8-4359-ab4a-69b6da6ea396",
+      "mapName": "ProWise Map",
+      "viewMode": "2d",
+      "capturedAt": "2026-10-29T07:48:19.535Z",
+      "sourceItem": {
+        "itemId": "0117e19a57b9497bac926382a0e95a7d",
+        "portalUrl": "https://www.arcgis.com"
+      }
+    },
+    "sourceSelection": {
+      "mode": "all"
+    },
+    "unsupportedLayers": [],
+    "degradedFeatures": [],
+    "notes": [
+      "Opened from portal item 0117e19a57b9497bac926382a0e95a7d at https://www.arcgis.com/sharing/rest."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "arcgis-nova-deployable-app",
+  "version": "0.1",
+  "generatedAt": "2026-10-29T07:48:19.535Z",
+  "title": "ProWise Map",
+  "authMode": "oauth",
+  "entry": "index.html",
+  "sourceAppPath": "outputs/apps/2026-10-29T07-46-05-f9d0cdb1-b5a4-413e-a08e-57e5fd9fcbf3/index.html",
+  "files": {
+    "app": "app.json",
+    "map": "map.json",
+    "runtime": "app.js",
+    "auth": "standalone-auth.js"
+  },
+  "portalUrl": "https://www.arcgis.com",
+  "appId": "2bH77WXURm6kUOQE",
+  "deploymentUrl": "https://rbruijning-esrinl.github.io/prowise-map/"
+}
