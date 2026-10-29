@@ -324,6 +324,18 @@
         "ownedLayerIds": [],
         "interactions": [],
         "installedAt": "2026-10-29T11:08:34.680Z"
+      },
+      {
+        "id": "search-remove-popover-content-class",
+        "label": "Remove search popover-content class without changing search layout",
+        "bundlePath": "./runtime/behaviors/search-remove-popover-content-class-8b3b7c55a9811028.js",
+        "sourceSha256": "8b3b7c55a98110283dcc36eb4dccd479063e38a2f052274b91713f4559a25666",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T11:31:59.377Z"
       }
     ]
   },
