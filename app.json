@@ -116,18 +116,6 @@
         "installedAt": "2026-10-29T08:36:32.173Z"
       },
       {
-        "id": "search-matching-shadow",
-        "label": "Match search bar shadow to Thema panel",
-        "bundlePath": "./runtime/behaviors/search-matching-shadow-7e21527c3b3a57ae.js",
-        "sourceSha256": "7e21527c3b3a57ae0043d259ca2c772c1734787fb1d31357b43131db77aa638f",
-        "modulePaths": [],
-        "config": {},
-        "mounts": [],
-        "ownedLayerIds": [],
-        "interactions": [],
-        "installedAt": "2026-10-29T08:38:35.541Z"
-      },
-      {
         "id": "search-icon-placeholder",
         "label": "Larger search icon and Dutch placeholder",
         "bundlePath": "./runtime/behaviors/search-icon-placeholder-fa60a1993d1cafdf.js",
@@ -278,18 +266,6 @@
         "installedAt": "2026-10-29T10:32:42.391Z"
       },
       {
-        "id": "search-bar-style",
-        "label": "Search aligned with Thema header; wait for input startup",
-        "bundlePath": "./runtime/behaviors/search-bar-style-f7e2eddc1fb848e6.js",
-        "sourceSha256": "f7e2eddc1fb848e68178c75d88897cf29c3499c25de4104f5b87e739c614a809",
-        "modulePaths": [],
-        "config": {},
-        "mounts": [],
-        "ownedLayerIds": [],
-        "interactions": [],
-        "installedAt": "2026-10-29T10:49:38.778Z"
-      },
-      {
         "id": "search-clean-controls",
         "label": "Hide provider and grey input borders after startup and rerender",
         "bundlePath": "./runtime/behaviors/search-clean-controls-f4d82e17075e7ae0.js",
@@ -358,6 +334,32 @@
           }
         ],
         "installedAt": "2026-10-29T11:51:26.310Z"
+      },
+      {
+        "id": "search-bar-style",
+        "label": "White search centered in rounded container",
+        "bundlePath": "./runtime/behaviors/search-bar-style-35fcbfe4ff4d6453.js",
+        "sourceSha256": "35fcbfe4ff4d64534616e2836203ae0b4007916d4dd2d9add31584e808d4a9e4",
+        "modulePaths": [],
+        "config": {
+          "insetPx": 8
+        },
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T17:11:59.432Z"
+      },
+      {
+        "id": "search-matching-shadow",
+        "label": "Match search container shadow to Thema panel",
+        "bundlePath": "./runtime/behaviors/search-matching-shadow-3c61bd9e334a9974.js",
+        "sourceSha256": "3c61bd9e334a9974a5f24a13e7584aa8a63a6c38f7f821eb65c6ca80542f4b16",
+        "modulePaths": [],
+        "config": {},
+        "mounts": [],
+        "ownedLayerIds": [],
+        "interactions": [],
+        "installedAt": "2026-10-29T17:13:42.328Z"
       }
     ]
   },
